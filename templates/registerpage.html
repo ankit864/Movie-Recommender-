@@ -1,0 +1,45 @@
+<!doctype html>
+<title>Flask</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+<script src="static/jquery.min.js"></script>
+<script src="static/bootstrap.min.js"></script>
+{% if error %}
+<div class="alert alert-warning">
+<p class=error><strong>Error:</strong> {{ error }}
+</div>
+{% endif %}
+<div class="container">
+<h1>Movie Recomender</h1>
+<form action="{{ url_for('recomend') }}" method=post>
+  <div class="form-group" id="group1">
+  <label for="question1">Do you like music in movie ?</label><br>
+  <input type="radio" name="group1" id="option1" value="yes"> Yes</input><br>
+  <input type="radio" name="group1" id="option2" value="no"> No </input><br>
+  </div>
+  <div class="form-group" id="group2">
+  <label for="question2">If you have given a choice to go on vaction with whom you will go ?:</label><br>
+  <input type="radio" name="group2" id="option1" value="family"> Family </input><br>
+  <input type="radio" name="group2" id="option2" value="gforbf"> Girl Friend / Boy Friend </input><br>
+  <input type="radio" name="group2" id="option1" value="friend">Friends</input><br>
+
+  </div>
+  <div class="form-group" id="group3">
+  <label for="question3">Do you believe in perfect world ?:</label><br>
+  <input type="radio" name="group3" id="option1" value="yes"> Yes </input><br>
+  <input type="radio" name="group3" id="option2" value="no">  No </input><br>
+
+  </div>
+  <div class="form-group" id="group4">
+  <label for="question3">Do you have any specific gener choice ?:</label><br>
+  <input type="radio" name="group4" id="option1" value="Drama"> Drama </input><br>
+  <input type="radio" name="group4" id="option2" value="Comedy"> Comedy  </input><br>
+  <input type="radio" name="group4" id="option3" value="War"> War </input><br>
+  <input type="radio" name="group4" id="option4 value="Adventure"> Adventure  </input><br>
+  <input type="radio" name="group4" id="option5" value="History"> History </input><br>
+
+
+  </div>
+
+  <input type=submit class="btn btn-success" value=Recomend>
+</form>
